@@ -1,4 +1,4 @@
-name: Generate Ascii Artwork
+name: deployment workflow
 
 on: 
   push
@@ -28,7 +28,7 @@ jobs:
       run : grep -i "dragon" dragon.txt 
   
   deply_job_3:
-    needs: test_job_2
+    needs: [test_job_2]
     runs-on: ubuntu-latest
     steps: 
     - name: Read file
